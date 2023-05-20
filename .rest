@@ -1,0 +1,50 @@
+###
+GET http://localhost:3000/ducks/
+###
+POST http://localhost:3000/ducks/new
+Content-Type: application/json
+
+{
+    "full_name": "Quackington McFeathers",
+    "color": "Sunshine Yellow",
+    "job": "Chief Quack Officer",
+    "size": "Medium",
+    "material": "Premium Rubber",
+    "weight": "Featherlight",
+    "floatability": "Expert Floater",
+    "features": ["Squeaky", "LED Light-up Beak"],
+    "accessories": ["Dapper Bowtie", "Top Hat"],
+    "fun_fact": "Quackington McFeathers holds the world record for the longest synchronized quacking performance with a flock of ducks."
+  }
+###
+POST http://localhost:3000/ducks/new
+Content-Type: application/json
+
+{
+    "full_name": "Daisy Quackinson",
+    "color": "Pretty Pink",
+    "job": "Chief Bubble Engineer",
+    "size": "Small",
+    "material": "Soft Vinyl",
+    "weight": "Light as a Feather",
+    "floatability": "Effortless Floater",
+    "features": ["Squeaky", "Water-Squirting Action"],
+    "accessories": ["Floral Hair Clip", "Swim Goggles"],
+    "fun_fact": "Daisy Quackinson is the official rubber duck of synchronized swimming championships."
+  }
+###
+POST http://localhost:3000/ducks/new
+Content-Type: application/json
+
+{
+    "full_name": "Sir Quacksalot",
+    "color": "Regal Purple",
+    "job": "Ducktor of Quackiology",
+    "size": "Large",
+    "material": "Quacktastic Plastic",
+    "weight": "A Stout Fellow",
+    "floatability": "Unsinkable Champion",
+    "features": ["Squeaky", "Wind-up Propeller Feet"],
+    "accessories": ["Monocle", "Pipe"],
+    "fun_fact": "Sir Quacksalot is knighted by the Royal Order of Bathtime, known for his bravery in rescuing rubber ducklings from drain monsters."
+  }
