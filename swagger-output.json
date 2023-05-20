@@ -1,0 +1,87 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Duck Directory API",
+    "description": "Directory containing duck information",
+    "version": "1.0.0"
+  },
+  "host": "duck-directory-api.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/ducks/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/ducks/new": {
+      "post": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "full_name": {
+                  "example": "any"
+                },
+                "color": {
+                  "example": "any"
+                },
+                "job": {
+                  "example": "any"
+                },
+                "size": {
+                  "example": "any"
+                },
+                "material": {
+                  "example": "any"
+                },
+                "weight": {
+                  "example": "any"
+                },
+                "floatability": {
+                  "example": "any"
+                },
+                "features": {
+                  "example": "any"
+                },
+                "accessories": {
+                  "example": "any"
+                },
+                "fun_fact": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
