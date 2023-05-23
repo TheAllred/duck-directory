@@ -7,4 +7,8 @@ router.get("/", ducksController.getAll);
 
 router.post("/new", ducksController.createNew);
 
+router.put("/update/:id", ducksController.updateDuck);
+
+router.delete("/delete/:id", ducksController.deleteDuck);
+
 module.exports = router;
