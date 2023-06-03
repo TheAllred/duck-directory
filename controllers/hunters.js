@@ -16,27 +16,17 @@ const getAll = async (req, res, next) => {
 const createNew = async (req, res, next) => {
   const newHunter = {
     full_name: req.body.full_name,
-    color: req.body.color,
-    job: req.body.job,
-    size: req.body.size,
-    material: req.body.material,
-    weight: req.body.weight,
-    floatability: req.body.floatability,
-    features: req.body.features,
-    accessories: req.body.accessories,
-    fun_fact: req.body.fun_fact,
+    occupation: req.body.occupation,
+    experience: req.body.experience,
+    equipment: req.body.equipment,
+    skills: req.body.skills,
   };
   if (
     !req.body.full_name ||
-    !req.body.color ||
-    !req.body.job ||
-    !req.body.size ||
-    !req.body.material ||
-    !req.body.weight ||
-    !req.body.floatability ||
-    !req.body.features ||
-    !req.body.accessories ||
-    !req.body.fun_fact
+    !req.body.occupation ||
+    !req.body.experience ||
+    !req.body.equipment ||
+    !req.body.skills
   ) {
     res.status(400).json({ message: "Failed to create hunter." });
   } else {
@@ -62,29 +52,19 @@ const createNew = async (req, res, next) => {
 };
 
 const updateHunter = async (req, res, next) => {
-  const updatedhunter = {
+  const updatedHunter = {
     full_name: req.body.full_name,
-    color: req.body.color,
-    job: req.body.job,
-    size: req.body.size,
-    material: req.body.material,
-    weight: req.body.weight,
-    floatability: req.body.floatability,
-    features: req.body.features,
-    accessories: req.body.accessories,
-    fun_fact: req.body.fun_fact,
+    occupation: req.body.occupation,
+    experience: req.body.experience,
+    equipment: req.body.equipment,
+    skills: req.body.skills,
   };
   if (
     !req.body.full_name ||
-    !req.body.color ||
-    !req.body.job ||
-    !req.body.size ||
-    !req.body.material ||
-    !req.body.weight ||
-    !req.body.floatability ||
-    !req.body.features ||
-    !req.body.accessories ||
-    !req.body.fun_fact
+    !req.body.occupation ||
+    !req.body.experience ||
+    !req.body.equipment ||
+    !req.body.skills
   ) {
     res.status(400).json({ message: "Failed to create hunter." });
   } else {
