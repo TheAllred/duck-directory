@@ -3,18 +3,18 @@ const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res, next) => {
   try {
-    const result = await mongodb.getDb().db().collection("directory").find();
+    const result = await mongodb.getDb().db().collection("hunters").find();
     const lists = await result.toArray();
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(lists);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Failed to get all ducks." });
+    res.status(500).json({ message: "Failed to get all hunters." });
   }
 };
 
 const createNew = async (req, res, next) => {
-  const newDuck = {
+  const newHunter = {
     full_name: req.body.full_name,
     color: req.body.color,
     job: req.body.job,
@@ -38,7 +38,7 @@ const createNew = async (req, res, next) => {
     !req.body.accessories ||
     !req.body.fun_fact
   ) {
-    res.status(400).json({ message: "Failed to create Duck." });
+    res.status(400).json({ message: "Failed to create hunter." });
   } else {
     try {
       const response = await mongodb
@@ -52,17 +52,17 @@ const createNew = async (req, res, next) => {
       } else {
         res
           .status(500)
-          .json(response.error || "Error occurred while creating new duck.");
+          .json(response.error || "Error occurred while creating new hunter.");
       }
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "Failed to create Duck." });
+      res.status(500).json({ message: "Failed to create hunter." });
     }
   }
 };
 
-const updateDuck = async (req, res, next) => {
-  const updatedDuck = {
+const updateHunter = async (req, res, next) => {
+  const updatedhunter = {
     full_name: req.body.full_name,
     color: req.body.color,
     job: req.body.job,
@@ -86,34 +86,34 @@ const updateDuck = async (req, res, next) => {
     !req.body.accessories ||
     !req.body.fun_fact
   ) {
-    res.status(400).json({ message: "Failed to create Duck." });
+    res.status(400).json({ message: "Failed to create hunter." });
   } else {
     try {
-      const duckId = new ObjectId(req.params.id);
+      const hunterId = new ObjectId(req.params.id);
       const response = await mongodb
         .getDb()
         .db()
         .collection("directory")
-        .replaceOne({ _id: duckId }, updatedDuck);
+        .replaceOne({ _id: hunterId }, updatedHunter);
       if (response.acknowledged) {
         res.setHeader("Content-Type", "application/json");
         res.status(204).json(response);
       }
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "Failed to update duck." });
+      res.status(500).json({ message: "Failed to update hunter." });
     }
   }
 };
 
-const deleteDuck = async (req, res, next) => {
+const deleteHunter = async (req, res, next) => {
   try {
-    const duckId = new ObjectId(req.params.id);
+    const hunterId = new ObjectId(req.params.id);
     const response = await mongodb
       .getDb()
       .db()
       .collection("directory")
-      .deleteOne({ _id: duckId });
+      .deleteOne({ _id: hunterId });
     if (response.acknowledged) {
       res.setHeader("Content-Type", "application/json");
       res.status(200).json(response);
@@ -121,8 +121,8 @@ const deleteDuck = async (req, res, next) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Failed to delete duck." });
+    res.status(500).json({ message: "Failed to delete hunter." });
   }
 };
 
-module.exports = { getAll, createNew, updateDuck, deleteDuck };
+module.exports = { getAll, createNew, updateHunter, deleteHunter };

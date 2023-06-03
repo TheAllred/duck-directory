@@ -48,3 +48,34 @@ Content-Type: application/json
     "accessories": ["Monocle", "Pipe"],
     "fun_fact": "Sir Quacksalot is knighted by the Royal Order of Bathtime, known for his bravery in rescuing rubber ducklings from drain monsters."
   }
+
+###
+PUT http://localhost:3000/ducks/update/6468374a407227f3b7728746
+Content-Type: application/json
+
+{
+  "full_name": "Quackington McFeathers",
+    "color": "Sunshine Yellow",
+    "job": "Chief Quack Officer",
+    "size": "Medium",
+    "material": "Premium Rubber",
+    "weight": "Featherlight",
+    "floatability": "Expert Floater",
+    "features": [
+      "Squeaky",
+      "LED Light-up Beak"
+    ],
+    "accessories": [
+      "Dapper Bowtie",
+      "Top Hat"
+    ],
+    "fun_fact": "Quackington McFeathers holds the world record for the longest synchronized quacking performance with a flock of ducks."
+  }
+
+
+
+
+
+###
+DELETE  http://localhost:3000/ducks/delete/6468374a407227f3b7728746
+Content-Type: application/json

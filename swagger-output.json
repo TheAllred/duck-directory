@@ -5,7 +5,7 @@
     "description": "Directory containing duck information",
     "version": "1.0.0"
   },
-  "host": "duck-directory-api.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": ["http", "https"],
   "paths": {
