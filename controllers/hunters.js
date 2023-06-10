@@ -28,7 +28,7 @@ const createNew = async (req, res, next) => {
     !req.body.equipment ||
     !req.body.skills
   ) {
-    res.status(400).json({ message: "Failed to create hunter." });
+    res.status(400).json({ message: "Invalid Hunter" });
   } else {
     try {
       const response = await mongodb
@@ -46,7 +46,9 @@ const createNew = async (req, res, next) => {
       }
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: "Failed to create hunter." });
+      res
+        .status(500)
+        .json({ message: "Failed to create hunter.", error: error });
     }
   }
 };
