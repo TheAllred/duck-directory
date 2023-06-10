@@ -35,7 +35,7 @@ const createNew = async (req, res, next) => {
         .getDb()
         .db()
         .collection("directory")
-        .insertOne(newContact);
+        .insertOne(newHunter);
       if (response.acknowledged) {
         res.setHeader("Content-Type", "application/json");
         res.status(201).json(response);
@@ -46,9 +46,7 @@ const createNew = async (req, res, next) => {
       }
     } catch (error) {
       console.error(error);
-      res
-        .status(500)
-        .json({ message: "Failed to create hunter.", error: error });
+      res.status(500).json({ message: "Failed to create hunter." });
     }
   }
 };

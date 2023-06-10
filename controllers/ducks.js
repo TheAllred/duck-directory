@@ -45,7 +45,7 @@ const createNew = async (req, res, next) => {
         .getDb()
         .db()
         .collection("directory")
-        .insertOne(newContact);
+        .insertOne(newDuck);
       if (response.acknowledged) {
         res.setHeader("Content-Type", "application/json");
         res.status(201).json(response);
